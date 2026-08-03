@@ -67,7 +67,7 @@ class ProductServiceTest {
         @Test
         void shouldReturnAllProducts() {
                 List<Product> expected = List.of(product, Product.builder()
-                                .id("2")
+                                .id("3")
                                 .name("Phone")
                                 .description("Latest smartphone")
                                 .price(999.99)
