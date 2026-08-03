@@ -36,7 +36,7 @@ public final class ProductAssertions {
                 assertThat(actual.getImageUrls())
                                 .containsExactlyElementsOf(expected.getImageUrls());
         }
-
+        // test commit 1
         public static void assertProductListEquals(
                         List<Product> expected,
                         List<Product> actual) {
