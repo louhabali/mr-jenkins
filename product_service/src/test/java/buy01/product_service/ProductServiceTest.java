@@ -84,7 +84,7 @@ class ProductServiceTest {
                 ProductAssertions.assertProductListEquals(expected, result);
                 verify(repository).findAll();
         }
-
+        //
         @Test
         void shouldCreateProductWithImages() {
                 Product expected = Product.builder()
