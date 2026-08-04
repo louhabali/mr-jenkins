@@ -94,7 +94,7 @@ class ProductServiceTest {
                                 .price(1999.99)
                                 .quantity(5)
                                 .userId("seller-1")
-                                .imageUrls(List.of("img1.jpg"))
+                                .imageUrls(null)
                                 .build();
 
                 when(mediaClient.uploadImages(any(MultipartFile[].class)))
@@ -116,7 +116,7 @@ class ProductServiceTest {
                 verify(mediaClient).uploadImages(any(MultipartFile[].class));
                 verify(repository).save(any(Product.class));
         }
-
+        // test
         @Test
         void shouldUpdateProductWithoutUploadingNewImages() {
                 when(repository.findById("1")).thenReturn(Optional.of(product));
