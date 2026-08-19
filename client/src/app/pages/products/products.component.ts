@@ -54,9 +54,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.userLoading = true;
 
-    // Run a 2000ms timer and the API request in parallel
+    // Run a 1000ms timer and the API request in parallel
     forkJoin({
-      timerDelay: timer(2000),
+      timerDelay: timer(1000),
       productsData: this.productService.getAllProducts().pipe(
         catchError((err) => {
           console.error('Failed to load products', err);
