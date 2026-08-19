@@ -50,3 +50,4 @@ services.forEach(s => {
 
 console.log(`${cyan}========================================================================================${reset}`);
 console.log(`${gray} Run "docker compose down" to stop all containers.\n${reset}`);
+//  docker rm $(docker ps -a -q -f status=exited)

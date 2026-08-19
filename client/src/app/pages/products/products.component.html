@@ -12,7 +12,11 @@
           Browse digital component offerings and artisan tools
         </p>
       </div>
-
+      
+      <a *ngIf="!currentUser" routerLink="/login"
+        class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg transition shadow-md flex items-center gap-2">
+        Authenticate
+      </a>
       <!-- Button shown ONLY to Sellers/Admins -->
       <a *ngIf="canAddProduct" routerLink="/products/add"
         class="bg-white hover:bg-gray-100 text-[#001830] font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg transition shadow-md flex items-center gap-2">
