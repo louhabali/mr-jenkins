@@ -2,12 +2,12 @@ package buy01.product_service.exceptions;
 
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.TypeMismatchException;
-import org.springframework.boot.context.properties.bind.BindException;
 import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -79,17 +79,6 @@ public class GlobalExceptionHandler {
                 .body(Map.of("errorMessage", ex.getReason() != null ? ex.getReason() : "An error occurred"));
     }
 
-    // 403
-    @ExceptionHandler(ForbiddenException.class)
-    public ResponseEntity<Map<String, String>> handleForbidden(ForbiddenException ex) {
-
-        Map<String, String> body = new HashMap<>();
-        body.put("error", "Forbidden");
-        body.put("message", ex.getMessage());
-
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(body);
-    }
-
     @ExceptionHandler(TypeMismatchException.class)
     public ResponseEntity<Map<String, String>> handleTypeMismatch(TypeMismatchException ex) {
 
@@ -119,6 +108,20 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }
 
+
+
+    // 403
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<Map<String, String>> handleForbidden(ForbiddenException ex) {
+
+        Map<String, String> body = new HashMap<>();
+        body.put("error", "Forbidden");
+        body.put("message", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(body);
+    }
+
+  
     // Handle method not allowed 405
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<String> handleMethodNotAllowed(HttpRequestMethodNotSupportedException ex) {

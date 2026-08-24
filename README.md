@@ -44,6 +44,7 @@
 - Secure API Gateway
 - HTTPS Support
 - Kafka Event Communication
+- openfeign and webclient
 - Dockerized Services
 - Responsive Angular Frontend
 
@@ -378,7 +379,7 @@ Stores uploaded images.
 
 # Author
 
-Ali Louhab
+Ali Louhab 
 
 ---
 

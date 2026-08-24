@@ -26,7 +26,11 @@ console.log(`${bold}${yellow}                       🚀 01E-COM MICROSERVICES R
 console.log(`${cyan}========================================================================================${reset}`);
 
 const services = [
+<<<<<<< HEAD
   { name: 'Frontend (Angular)', status: '● Running', port: '8443 / 8081', url: 'https://localhost:8443 - http://localhost:8081', color: green },
+=======
+  { name: 'Frontend (Angular)', status: '● Running', port: '8443 / 8081', url: 'https://localhost:8443 * http://localhost:8081' , color: green },
+>>>>>>> 1f48d60d2b9a311d18c3e97e1df427f8f6706c4c
   { name: 'Spring Gateway',     status: '● Running', port: '8089',        url: 'https://localhost:8089', color: magenta },
   { name: 'User Service',       status: '● Running', port: '8081',        url: 'http://user-service:8081', color: yellow },
   { name: 'Product Service',    status: '● Running', port: '8082',        url: 'http://product-service:8082', color: yellow },
@@ -50,3 +54,7 @@ services.forEach(s => {
 
 console.log(`${cyan}========================================================================================${reset}`);
 console.log(`${gray} Run "docker compose down" to stop all containers.\n${reset}`);
+<<<<<<< HEAD
+=======
+//  docker rm $(docker ps -a -q -f status=exited)
+>>>>>>> 1f48d60d2b9a311d18c3e97e1df427f8f6706c4c
