@@ -75,7 +75,7 @@ class ProductServiceTest {
                                 .userId("seller-2")
                                 .imageUrls(List.of("img2.jpg"))
                                 .build());
-
+                
                 when(repository.findAll()).thenReturn(expected);
 
                 List<Product> result = service.getAllProducts();
