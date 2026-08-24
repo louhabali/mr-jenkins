@@ -80,7 +80,7 @@ class UserServiceTests {
     @Test
     void shouldThrowWhenEmailAlreadyExists() {
         when(userRepository.findByEmail("alice@example.com")).thenReturn(Optional.of(user));
-
+        
         BadRequestException exception = assertThrows(
                 BadRequestException.class,
                 () -> userService.register("alice", "alice@example.com", "secret123", "CLIENT", "avatar.png"));
