@@ -102,6 +102,10 @@ pipeline {
                 subject: "🚨 FAILURE: ${env.JOB_NAME} [Build #${env.BUILD_NUMBER}]",
                 body: "Tests or build failed before deployment. Production remains safe and untouched.\n\nCheck logs at: ${env.BUILD_URL}"
             )
+            sh '
+                docker ps -aq | grep -v "$(docker ps -aqf name=jenkins)" | xargs -r docker rm -f
+                '
+            
         }
     }
 }
