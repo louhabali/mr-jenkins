@@ -52,29 +52,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   loadDataWithDelay(): void {
     this.isLoading = true;
-<<<<<<< HEAD
-    this.productService.getAllProducts().subscribe({
-      next: (data: any[]) => {
-     
-        console.log(data)
-        if (Array.isArray(data)) {
-          this.products = data.map(p => ({
-            ...p,
-            id: p.id || p._id || (p._id && p._id.$oid ? p._id.$oid : '')
-            
-          }));
-        } else {
-          this.products = [];
-        }
-        this.isLoading = false;
-        this.cdr.detectChanges();
-      },
-      error: (err) => {
-        console.error('Failed to load products', err);
-        this.error = 'Could not fetch products from backend.';
-        this.isLoading = false;
-        this.cdr.detectChanges();
-=======
     this.userLoading = true;
 
     // Run a 1000ms timer and the API request in parallel
@@ -95,7 +72,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
         }));
       } else {
         this.products = [];
->>>>>>> 1f48d60d2b9a311d18c3e97e1df427f8f6706c4c
       }
 
       // Hide both loaders at the exact same moment after 2 seconds
