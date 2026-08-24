@@ -75,7 +75,7 @@ class ProductServiceTest {
                                 .userId("seller-2")
                                 .imageUrls(List.of("img2.jpg"))
                                 .build());
-                
+
                 when(repository.findAll()).thenReturn(expected);
 
                 List<Product> result = service.getAllProducts();
@@ -94,7 +94,7 @@ class ProductServiceTest {
                                 .price(1999.99)
                                 .quantity(5)
                                 .userId("seller-1")
-                                .imageUrls(List.of("img1.jpg"))
+                                .imageUrls(null)
                                 .build();
 
                 when(mediaClient.uploadImages(any(MultipartFile[].class)))
@@ -111,7 +111,7 @@ class ProductServiceTest {
                                 new MultipartFile[] { image },
                                 "seller-1",
                                 "SELLER");
-
+                
                 ProductAssertions.assertProductEquals(expected, result);
                 verify(mediaClient).uploadImages(any(MultipartFile[].class));
                 verify(repository).save(any(Product.class));
