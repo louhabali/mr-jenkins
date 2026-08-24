@@ -12,7 +12,7 @@ pipeline {
     triggers {
         githubPush()
     }
-    
+
     stages {
         stage('Checkout & Setup Env') {
             steps {
@@ -30,6 +30,7 @@ pipeline {
                     args '-u 0'
                     reuseNode true
                 }
+                
             }
             steps {
                 echo 'Running Angular unit tests inside isolated container...'
