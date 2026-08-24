@@ -71,7 +71,7 @@ class UserServiceTests {
         when(passwordEncoder.encode("secret123")).thenReturn("encoded-password");
 
         Map<String, Object> result = userService.register("alice", "alice@example.com", "secret123", "CLIENT", "avatar.png");
-
+        // cc
         assertThat(result).containsEntry("success", true);
         assertThat(result).containsEntry("message", "User registered successfully");
         verify(userRepository).save(any(User.class));
