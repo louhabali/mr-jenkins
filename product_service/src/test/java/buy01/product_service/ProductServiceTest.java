@@ -94,7 +94,7 @@ class ProductServiceTest {
                                 .price(1999.99)
                                 .quantity(5)
                                 .userId("seller-1")
-                                .imageUrls(null)
+                                .imageUrls("image1.jpg")
                                 .build();
 
                 when(mediaClient.uploadImages(any(MultipartFile[].class)))
